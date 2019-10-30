@@ -147,7 +147,7 @@ GameRoom.prototype.update = function () {
         this.isSending = true;     
     }
     //等待发牌动画结束后显示获得的牌
-    if(this.mDeck.isSendOver() && this.isSending && this.mHand !== 3){   
+    if(this.mDeck.isSendOver() && this.isSending && this.mHand != gEngine.Mine.hand){   
         this.mPlayer.hand[this.mHand].receiveCard(this.mCard, true,this.kCard[52],this.kCard[this.mCard],-320+30*this.numCard+310*this.mHand,-200);
         this.isSending = false;
         this.numCard += 1;
